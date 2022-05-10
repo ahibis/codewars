@@ -1,6 +1,6 @@
-#codewars
+# Codewars
 My codewars solutions
-## exmaple
+## Exmaple
 rot13.js
 
 ```javascript
