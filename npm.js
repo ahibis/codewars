@@ -52,7 +52,7 @@ const data = {
     ],
   },
 };
-function dependencyExplode(data, {packageName, version}){
+function dependencyExplode(data, {packageName, version}){ // возвращает массив зависимых пакетов
   const dependencies = []
   const packageDependencies = (data[packageName].versions.find(package=>package.version == version)?.dependencies || []).slice()
   dependencies.push(...packageDependencies)
@@ -65,7 +65,7 @@ const SUCCESS = 0;
 const FIRST_DOWN = 1; // понизить в версии первый пакет
 const SECOND_DOWN = 2; // понизить в версии второй пакет
 
-function tryCombine(data,packageA, packageB){ 
+function tryCombine(data,packageA, packageB){ // смотрит совместимы ли 2 версии пакетов возвращая статус 
   const versions = {}
   const dependenciesA = [packageA,...dependencyExplode(data,packageA)]
   const dependenciesB = [packageB,...dependencyExplode(data, packageB)]
