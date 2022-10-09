@@ -1,17 +1,18 @@
-class EarthRoute {
-  static vault = [];
-  transfer(parcel) {
+function EarthRoute(){
+  EarthRoute.vault = []
+  this.transfer = function(parcel){
     parcel.destination = "Earth";
     EarthRoute.vault.push(parcel);
   }
 }
-class MoonRoute {
-  static warehouse = [];
-  transfer(parcel) {
-    parcel.destination = "Moon";
-    MoonRoute.warehouse.push(parcel);
-  }
+
+function MoonRoute (){}
+MoonRoute.warehouse = []
+MoonRoute.prototype.transfer = function(parcel){
+  parcel.destination = "Moon";
+  MoonRoute.warehouse.push(parcel);
 }
+
 function extendTransportSystem(EarthRoute, MoonRoute) {
   const messages = [];
   const oldEarthTransfer = EarthRoute.prototype.transfer;
