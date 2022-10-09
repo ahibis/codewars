@@ -62,8 +62,8 @@ function dependencyExplode(data, {packageName, version}){ // возвращае�
   return dependencies
 }
 const SUCCESS = 0;
-const FIRST_DOWN = 1; // понизить в версии первый пакет
-const SECOND_DOWN = 2; // понизить в версии второй пакет
+const FIRST_DOWN = 1; // понизить версию первого пакета
+const SECOND_DOWN = 2; // понизить версию второго пакета
 
 function tryCombine(data,packageA, packageB){ // смотрит совместимы ли 2 версии пакетов возвращая статус 
   const versions = {}
