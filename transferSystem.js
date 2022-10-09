@@ -1,6 +1,6 @@
 function EarthRoute(){
   EarthRoute.vault = []
-  this.transfer = function(parcel){
+  this.transfer = parcel =>{
     parcel.destination = "Earth";
     EarthRoute.vault.push(parcel);
   }
@@ -8,7 +8,7 @@ function EarthRoute(){
 
 function MoonRoute (){}
 MoonRoute.warehouse = []
-MoonRoute.prototype.transfer = function(parcel){
+MoonRoute.prototype.transfer = (parcel) =>{
   parcel.destination = "Moon";
   MoonRoute.warehouse.push(parcel);
 }
